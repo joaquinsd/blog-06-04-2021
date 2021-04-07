@@ -1,19 +1,20 @@
-<% if @post.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@post.errors.count, "error") %>
-    prohibited this post from being published:
-    </h2>
-    <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-    <p><%= link_to 'Try again', posts_dashboard_path %></p>
-  </div>
-<% else%>
-  <h1> Your post was created successfully! </h1>
-  <p>Check your recently created post <%= link_to 'here', posts_path %></p>
-<% end %>
-
+<div class="container">
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@post.errors.count, "error") %>
+      prohibited this post from being published:
+      </h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+      <p><%= link_to 'Try again', posts_dashboard_path %></p>
+    </div>
+  <% else%>
+    <h1> Your post was created successfully! </h1>
+    <p>Check your recently created post <%= link_to 'here', posts_path %></p>
+  <% end %>
+</div>
 
